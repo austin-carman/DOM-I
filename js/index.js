@@ -54,6 +54,11 @@ links[5].textContent = siteContent['nav']['nav-item-6'];
 const headerTitle = document.querySelector('.cta-text h1');
 headerTitle.textContent = siteContent['cta']['h1'];
 
+
+
+// var br = document.createElement("br");
+// element.appendChild(br);
+
 console.log(headerTitle);
 
 
@@ -109,3 +114,5 @@ const newLink  = document.createElement('a');
 newLink.textContent = 'New Link';
 document.querySelector('nav').prepend(newLink);
 newLink.style.color = 'green'
+
+
