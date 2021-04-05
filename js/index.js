@@ -38,55 +38,74 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let links = document.querySelectorAll('nav a');
-links[0].textContent = 'Services';
-links[1].textContent = 'Product';
-links[2].textContent = 'Vision';
-links[3].textContent = 'Features';
-links[4].textContent = 'About';
-links[5].textContent = 'Contact';
+const links = document.querySelectorAll('nav a');
+links[0].textContent = siteContent['nav']['nav-item-1'];
+links[1].textContent = siteContent['nav']['nav-item-2'];
+links[2].textContent = siteContent['nav']['nav-item-3'];
+links[3].textContent = siteContent['nav']['nav-item-4'];
+links[4].textContent = siteContent['nav']['nav-item-5'];
+links[5].textContent = siteContent['nav']['nav-item-6'];
 
-let headerTitle = document.querySelector('.cta-text h1');
-headerTitle.textContent = 'DOM is Awesome';
 
-let buttonText = document.querySelector('.cta-text button');
-buttonText.textContent = 'Get Started';
+// need to make h1 match original
+const headerTitle = document.querySelector('.cta-text h1');
+headerTitle.textContent = siteContent['cta']['h1'];
 
-let headerImg = document.querySelector('#cta-img');
-headerImg.src = 'img/header-img.png';
+console.log(headerTitle);
 
-let topSectionContent = document.querySelector('.top-content');
-let topSubtitles = topSectionContent.querySelectorAll('h4');
-let topPara = topSectionContent.querySelectorAll('p');
-topSubtitles[0].textContent = 'Features';
-topSubtitles[1].textContent = 'About';
-topPara[0].textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio,in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
-topPara[1].textContent = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
 
-let middleImg = document.querySelector('#middle-img');
-middleImg.src = 'img/mid-page-accent.jpg';
+const buttonText = document.querySelector('.cta-text button');
+buttonText.textContent = siteContent['cta']['button'];
 
-let bottomSectionContent = document.querySelector('.bottom-content');
-let bottomSubtitles = bottomSectionContent.querySelectorAll('h4');
-let bottomPara = bottomSectionContent.querySelectorAll('p');
-bottomSubtitles[0].textContent = 'Services';
-bottomSubtitles[1].textContent = 'Product';
-bottomSubtitles[2].textContent = 'Vision';
-bottomPara[0].textContent = 'Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
-bottomPara[1].textContent = 'Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
-bottomPara[2].textContent = 'Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
+const headerImg = document.querySelector('#cta-img');
+headerImg.src = siteContent['cta']['img-src'];
 
-let contactSection = document.querySelector('.contact');
-let contactSubtitle = contactSection.querySelector('h4');
-let contactPara = contactSection.querySelectorAll('p');
-contactSubtitle.textContent = 'Contact';
-contactPara[0].textContent = '123 Way 456 Street Somewhere, USA';
-contactPara[1].textContent = '1 (888) 888-8888';
-contactPara[2].textContent = 'sales@greatidea.io';
+const topSectionContent = document.querySelector('.top-content');
+const topSubtitles = topSectionContent.querySelectorAll('h4');
+const topPara = topSectionContent.querySelectorAll('p');
+topSubtitles[0].textContent = siteContent['main-content']['features-h4'];
+topSubtitles[1].textContent = siteContent['main-content']['about-h4'];
+topPara[0].textContent = siteContent['main-content']['features-content']
+topPara[1].textContent = siteContent['main-content']['about-content']
 
-let copyright = document.querySelector('footer p');
-copyright.textContent = 'Copyright Great Idea! 2018';
+const middleImg = document.querySelector('#middle-img');
+middleImg.src = siteContent['main-content']['middle-img-src'];
 
+const bottomSectionContent = document.querySelector('.bottom-content');
+const bottomSubtitles = bottomSectionContent.querySelectorAll('h4');
+const bottomPara = bottomSectionContent.querySelectorAll('p');
+bottomSubtitles[0].textContent = siteContent['main-content']['services-h4'];
+bottomSubtitles[1].textContent = siteContent['main-content']['product-h4'];
+bottomSubtitles[2].textContent = siteContent['main-content']['vision-h4'];
+bottomPara[0].textContent = siteContent['main-content']['services-content'];
+bottomPara[1].textContent = siteContent['main-content']['product-content'];
+bottomPara[2].textContent = siteContent['main-content']['vision-content'];
+
+const contactSection = document.querySelector('.contact');
+const contactSubtitle = contactSection.querySelector('h4');
+const contactPara = contactSection.querySelectorAll('p');
+contactSubtitle.textContent = siteContent['contact']['contact-h4'];
+contactPara[0].textContent = siteContent['contact']['address'];
+contactPara[1].textContent = siteContent['contact']['phone'];
+contactPara[2].textContent = siteContent['contact']['email'];
+
+const copyright = document.querySelector('footer p');
+copyright.textContent = siteContent['footer']['copyright'];
+
+
+//adding new content
+//color
+links.forEach(item => item.style.color = 'green');
+//adding a link
+const anotherLink = document.createElement('a');
+anotherLink.textContent = 'Another Link';
+document.querySelector('nav').appendChild(anotherLink);
+anotherLink.style.color = 'green'
+
+const newLink  = document.createElement('a');
+newLink.textContent = 'New Link';
+document.querySelector('nav').prepend(newLink);
+newLink.style.color = 'green'
